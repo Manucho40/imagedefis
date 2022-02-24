@@ -1,25 +1,27 @@
 <template>
   <div>
-      <h1>Cliquez sur l'image que vous souhaitez !</h1>
-
-      <!-- <nuxt-link v-for="(img, index) in this.tab" :key="index" :to="'/' + index">
-            <img :src="img.urls.raw" alt="">
+      <nuxt-link :to="`/${tabImg.id}`">
+             <img :src="tabImg.urls.raw" alt="">
+             
       </nuxt-link >
-      <template v-bind:tab="this.tab"></template> -->
   </div>
 </template>
 
 <script>
-import axios from "axios"
+
 export default {
  name: "First",
- 
- computed:{
-     tabImg(){
-         return this.$store.state.tabImg
-     }
- }
 
+ props: ['tabImg'],
+ methods:{
+        sendTopage(){
+            this.$router.push({path:"/admin/posts/update/"+this.tabImg.id})
+        }
+ },
+
+ mounted(){
+    //  console.log('First - MOUNTED', this.tabImg)
+ }
 
 
 }

@@ -35,8 +35,13 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios'
     
   ],
+
+  axios: {
+    baseURL: 'https://api.unsplash.com/search/photos/?query=person&client_id=KhmBQyxSIrmHcVo3LRMfSgTnjmco3ah1uDFnw3RhicY'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
